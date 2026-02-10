@@ -3,7 +3,7 @@ name: Kollectibles Monitor
 on:
   schedule:
     - cron: '*/5 * * * *'
-  workflow_dispatch:
+  workflow_dispatch: # Keeps the manual "Run" button active
 
 permissions:
   contents: write
