@@ -1,39 +1,39 @@
-name: Kollectibles Monitor
+name: Kollect Monitor
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
-  workflow_dispatch: # Keeps the manual "Run" button active
-
-permissions:
-  contents: write
+    # Runs every 5 minutes from 6:00 AM IST to 12:00 AM IST
+    # (Matches 12:30 AM UTC to 6:30 PM UTC)
+    - cron: '30/5 0-17 * * *'
+    - cron: '0-30/5 18 * * *'
+  workflow_dispatch: # Allows you to click "Run" manually
 
 jobs:
-  scrape-and-notify:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
-      - name: Install Dependencies
-        run: pip install requests telethon beautifulsoup4
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
 
-      - name: Run Scraper
+      - name: Run scraper
         env:
-          API_ID: ${{ secrets.API_ID }}
-          API_HASH: ${{ secrets.API_HASH }}
-          SESSION_STR: ${{ secrets.SESSION_STR }}
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          TARGET_CHAT: ${{ secrets.TARGET_CHAT }}
+          MY_HANDLE: ${{ secrets.MY_HANDLE }}
         run: python scraper.py
 
-      - name: Save Memory (inventory.json)
+      - name: Save Inventory (Commit and Push)
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add inventory.json
-          git commit -m "Automated inventory update" || echo "No changes to commit"
+          git add inventory.json || exit 0
+          git commit -m "Update inventory [skip ci]" || exit 0
           git push
