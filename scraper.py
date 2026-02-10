@@ -12,7 +12,7 @@ API_HASH = os.environ.get("API_HASH", "")
 SESSION_STR = os.environ.get("SESSION_STR", "")
 
 # 🛠️ UPDATE THIS: Your Channel ID (e.g. -100...)
-TARGET_CHAT = -100123456789 
+TARGET_CHAT = -1003773854304
 
 PAGE_URL = "https://kollectibles.in/collections/mini-gt-india?filter.v.availability=1&sort_by=created-descending"
 
