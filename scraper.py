@@ -12,7 +12,7 @@ API_HASH = os.environ.get("API_HASH", "")
 SESSION_STR = os.environ.get("SESSION_STR", "")
 
 # 🛠️ UPDATE THESE:
-TARGET_CHAT = -1003773854304  # Your Channel ID (e.g. -100...)
+TARGET_CHAT = -1003773854304  # Your Channel ID
 MY_HANDLE = "@lemonsnickers"  # Your @username inside quotes
 
 PAGE_URL = "https://kollectibles.in/collections/mini-gt-india?filter.v.availability=1&sort_by=created-descending"
@@ -67,5 +67,26 @@ async def main():
 
     for p in reversed(products):
         if p['handle'] not in last_inventory:
-            # The Mention Hack
-            msg = f"🔔 {MY_HANDLE} **NEW DROP!**\n\n🚗 **{p['title']}**\n💰 Price: {p['price']}\n🔗 [View
+            # Using Triple Quotes to prevent line-break errors
+            msg = f"""🔔 {MY_HANDLE} **NEW DROP!**
+
+🚗 **{p['title']}**
+💰 Price: {p['price']}
+🔗 [View Product](https://kollectibles.in/products/{p['handle']})"""
+            
+            try:
+                if p['image']:
+                    await client.send_file(TARGET_CHAT, p['image'], caption=msg, parse_mode='md', silent=False)
+                else:
+                    await client.send_message(TARGET_CHAT, msg, parse_mode='md', silent=False)
+                print(f"📩 Sent: {p['title']}")
+                await asyncio.sleep(2) 
+            except Exception as e:
+                print(f"⚠️ Send Error: {e}")
+
+    with open("inventory.json", "w") as f:
+        json.dump(current_inventory, f, indent=4)
+    print("✅ Run Complete.")
+
+if __name__ == "__main__":
+    asyncio.run(main())
