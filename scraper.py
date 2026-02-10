@@ -9,32 +9,58 @@ from telethon.sessions import StringSession
 API_ID = int(os.environ.get("API_ID", 0))
 API_HASH = os.environ.get("API_HASH", "")
 SESSION_STR = os.environ.get("SESSION_STR", "")
+TARGET_CHAT = 'me'
+BASE_URL = "https://kollectibles.in"
+MONITOR_URL = f"{BASE_URL}/collections/mini-gt-india/products.json?limit=250"
 
 async def main():
-    print("Step 1: Initializing Client...")
+    print("🚀 Initializing...")
     client = TelegramClient(StringSession(SESSION_STR), API_ID, API_HASH)
     
-    try:
-        # This will time out after 30 seconds if it can't connect
-        await asyncio.wait_for(client.connect(), timeout=30)
-    except asyncio.TimeoutError:
-        print("❌ ERROR: Connection Timed Out. GitHub might be blocked or Session is bad.")
+    await client.connect()
+    if not await client.is_user_authorized():
+        print("❌ Auth Failed")
         return
 
-    print("Step 2: Checking Authorization...")
-    if not await client.is_user_authorized():
-        print("❌ ERROR: Your SESSION_STR is not authorized. You must re-run the local script and get a NEW string.")
-        return
-    
-    print("✅ SUCCESS: Connected and Authorized!")
-    
-    # Simple test message
-    await client.send_message('me', "✅ Monitor is Online!")
-    print("Step 3: Test Message Sent to 'Saved Messages'.")
+    # Load Inventory
+    try:
+        with open("inventory.json", "r") as f:
+            last_inventory = json.load(f)
+    except FileNotFoundError:
+        last_inventory = {}
+
+    # Scrape
+    headers = {'User-Agent': 'Mozilla/5.0'}
+    try:
+        response = requests.get(MONITOR_URL, headers=headers, timeout=15)
+        products = response.json().get('products', [])[:10]
+        print(f"🔎 Found {len(products)} products.")
+    except Exception as e:
+        print(f"❌ Scrape Error: {e}")
+        products = []
+
+    current_inventory = {}
+    for p in products:
+        p_id = str(p['id'])
+        price = p['variants'][0]['price'] if p['variants'] else "N/A"
+        current_inventory[p_id] = {
+            'title': p['title'], 
+            'available': any(v['available'] for v in p['variants']),
+            'handle': p['handle'],
+            'price': price
+        }
+
+    # Compare
+    for p_id, data in current_inventory.items():
+        if data['available'] and p_id not in last_inventory:
+            msg = f"✨ NEW DROP\n\n🚗 {data['title']}\n💰 Price: ₹{data['price']}\n🔗 {BASE_URL}/products/{data['handle']}"
+            await client.send_message(TARGET_CHAT, msg)
+            print(f"📩 Sent: {data['title']}")
+
+    # Save (This prevents the Git 128 error)
+    with open("inventory.json", "w") as f:
+        json.dump(current_inventory, f, indent=4)
+    print("✅ Done!")
 
 if __name__ == "__main__":
-    try:
-        # Forces the whole thing to die after 60 seconds max
-        asyncio.run(asyncio.wait_for(main(), timeout=60))
-    except Exception as e:
-        print(f"Final Crash: {e}")
+    asyncio.run(main())
