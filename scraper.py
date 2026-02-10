@@ -10,17 +10,22 @@ from telethon.sessions import StringSession
 API_ID = int(os.environ.get("API_ID", 0))
 API_HASH = os.environ.get("API_HASH", "")
 SESSION_STR = os.environ.get("SESSION_STR", "")
-TARGET_CHAT = -1003773854304
-# We use the EXACT link you provided
+
+# 🛠️ UPDATE THIS: Use your Channel ID (e.g., -100...) or @username
+TARGET_CHAT = -100123456789 
+
+# 🛠️ UPDATE THIS: Your actual Telegram @username to force a notification ping
+MY_HANDLE = "@lemonsnickers" 
+
 PAGE_URL = "https://kollectibles.in/collections/mini-gt-india?filter.v.availability=1&sort_by=created-descending"
 
 async def main():
-    print("🚀 Initializing Visual-Order Scraper...")
+    print("🚀 Running Pro Scraper with Audio-Force Hack...")
     client = TelegramClient(StringSession(SESSION_STR), API_ID, API_HASH)
     await client.connect()
     
     if not await client.is_user_authorized():
-        print("❌ Auth Failed")
+        print("❌ Auth Failed - Check your SESSION_STR")
         return
 
     try:
@@ -34,48 +39,31 @@ async def main():
     try:
         response = requests.get(PAGE_URL, headers=headers, timeout=15)
         soup = BeautifulSoup(response.text, 'html.parser')
-        
-        # This finds the product cards in the order they appear on screen
-        cards = soup.select('.grid__item')[:10]
+        cards = soup.find_all('li', class_='grid__item')[:10]
         
         products = []
         for card in cards:
-            title_el = card.select_one('.card__heading')
-            link_el = card.select_one('a.full-unstyled-link')
-            price_el = card.select_one('.price-item--regular')
+            title_el = card.find('h3', class_='card__heading')
+            link_el = card.find('a', class_='full-unstyled-link')
+            price_el = card.find('span', class_='price-item--regular')
+            img_el = card.find('img')
+            
+            # Extract Image URL cleanly
+            img_url = None
+            if img_el:
+                img_src = img_el.get('src') or img_el.get('data-src')
+                if img_src:
+                    img_url = "https:" + img_src if img_src.startswith('//') else img_src
             
             if title_el and link_el:
-                title = title_el.text.strip()
-                handle = link_el['href'].split('/')[-1]
-                price = price_el.text.strip() if price_el else "N/A"
-                # We use the handle as the ID since we are scraping HTML
-                products.append({'title': title, 'handle': handle, 'price': price})
-        
-        print(f"🔎 Captured {len(products)} items in webpage sequence.")
-        
+                products.append({
+                    'title': title_el.get_text(strip=True),
+                    'handle': link_el['href'].split('/')[-1].split('?')[0],
+                    'price': price_el.get_text(strip=True) if price_el else "N/A",
+                    'image': img_url
+                })
     except Exception as e:
         print(f"❌ Scrape Error: {e}")
         products = []
 
-    current_inventory = {}
-    for p in products:
-        current_inventory[p['handle']] = p
-
-    # Process in reverse for Telegram so the #1 item is at the bottom
-    for handle, data in list(current_inventory.items())[::-1]:
-        if handle not in last_inventory:
-            msg = (
-                f"✨ **NEW ARRIVAL**\n\n"
-                f"🚗 **{data['title']}**\n"
-                f"💰 Price: {data['price']}\n"
-                f"🔗 [View Product](https://kollectibles.in/products/{data['handle']})"
-            )
-            await client.send_message(TARGET_CHAT, msg, parse_mode='md')
-            print(f"📩 Alert: {data['title']}")
-
-    with open("inventory.json", "w") as f:
-        json.dump(current_inventory, f, indent=4)
-    print("✅ Run Complete.")
-
-if __name__ == "__main__":
-    asyncio.run(main())
+    current_inventory = {p['handle']: p for p in
