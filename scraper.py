@@ -11,19 +11,19 @@ API_ID = int(os.environ.get("API_ID", 0))
 API_HASH = os.environ.get("API_HASH", "")
 SESSION_STR = os.environ.get("SESSION_STR", "")
 
-# 🛠️ UPDATE THESE TWO:
-TARGET_CHAT = -100123456789 # Replace with your Channel ID
-MY_HANDLE = "@lemonsnickers" # Replace with your @username
+# 🛠️ UPDATE THESE:
+TARGET_CHAT = -100123456789  # Your Channel ID
+MY_HANDLE = "@lemonsnickers"  # Your @username inside quotes
 
 PAGE_URL = "https://kollectibles.in/collections/mini-gt-india?filter.v.availability=1&sort_by=created-descending"
 
 async def main():
-    print("🚀 Running Pro Scraper with Audio-Force Hack...")
+    print("🚀 Running Monitor with @Mention...")
     client = TelegramClient(StringSession(SESSION_STR), API_ID, API_HASH)
     await client.connect()
     
     if not await client.is_user_authorized():
-        print("❌ Auth Failed - Check your SESSION_STR")
+        print("❌ Auth Failed")
         return
 
     try:
@@ -63,11 +63,11 @@ async def main():
         print(f"❌ Scrape Error: {e}")
         products = []
 
-    # --- FIX WAS HERE ---
     current_inventory = {p['handle']: p for p in products}
 
     for p in reversed(products):
         if p['handle'] not in last_inventory:
+            # We keep the mention here in the text
             msg = (
                 f"🔔 {MY_HANDLE} **NEW DROP!**\n\n"
                 f"🚗 **{p['title']}**\n"
@@ -77,22 +77,12 @@ async def main():
             
             try:
                 if p['image']:
-                    await client.send_file(
-                        TARGET_CHAT, 
-                        p['image'], 
-                        caption=msg, 
-                        parse_mode='md', 
-                        silent=False
-                    )
+                    # Removed 'silent=False' so it uses default Telegram behavior
+                    await client.send_file(TARGET_CHAT, p['image'], caption=msg, parse_mode='md')
                 else:
-                    await client.send_message(
-                        TARGET_CHAT, 
-                        msg, 
-                        parse_mode='md', 
-                        silent=False
-                    )
-                print(f"📩 Alert Sent: {p['title']}")
-                await asyncio.sleep(2) 
+                    await client.send_message(TARGET_CHAT, msg, parse_mode='md')
+                print(f"📩 Sent: {p['title']}")
+                await asyncio.sleep(1) 
             except Exception as e:
                 print(f"⚠️ Send Error: {e}")
 
