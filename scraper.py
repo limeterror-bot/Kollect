@@ -33,7 +33,7 @@ async def main():
     try:
         response = requests.get(MONITOR_URL, headers=headers, timeout=15)
         response.raise_for_status()
-        products = response.json().get('products', [:10])
+       products = response.json().get('products', [])[:10]
     except Exception as e:
         print(f"❌ Scraper Error: {e}")
         return
