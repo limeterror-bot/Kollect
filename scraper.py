@@ -10,7 +10,7 @@ from telethon.sessions import StringSession
 API_ID = int(os.environ.get("API_ID", 0))
 API_HASH = os.environ.get("API_HASH", "")
 SESSION_STR = os.environ.get("SESSION_STR", "")
-TARGET_CHAT = 'me'
+TARGET_CHAT = -1003773854304
 # We use the EXACT link you provided
 PAGE_URL = "https://kollectibles.in/collections/mini-gt-india?filter.v.availability=1&sort_by=created-descending"
 
