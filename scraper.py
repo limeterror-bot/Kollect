@@ -13,7 +13,7 @@ SESSION_STR = os.environ.get("SESSION_STR", "")
 
 # 🛠️ UPDATE THESE TWO:
 TARGET_CHAT = -100123456789 # Replace with your Channel ID
-MY_HANDLE = "@your_username" # Replace with your @username
+MY_HANDLE = "@lemonsnickers" # Replace with your @username
 
 PAGE_URL = "https://kollectibles.in/collections/mini-gt-india?filter.v.availability=1&sort_by=created-descending"
 
