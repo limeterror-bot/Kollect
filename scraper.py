@@ -11,13 +11,14 @@ API_ID = int(os.environ.get("API_ID", 0))
 API_HASH = os.environ.get("API_HASH", "")
 SESSION_STR = os.environ.get("SESSION_STR", "")
 
-# 🛠️ UPDATE THIS: Your Channel ID (e.g. -100...)
-TARGET_CHAT = -1003773854304
+# 🛠️ UPDATE THESE:
+TARGET_CHAT = -1003773854304  # Your Channel ID (e.g. -100...)
+MY_HANDLE = "@lemonsnickers"  # Your @username inside quotes
 
 PAGE_URL = "https://kollectibles.in/collections/mini-gt-india?filter.v.availability=1&sort_by=created-descending"
 
 async def main():
-    print("🚀 Running Clean Monitor...")
+    print("🚀 Running Audio-Force Monitor...")
     client = TelegramClient(StringSession(SESSION_STR), API_ID, API_HASH)
     await client.connect()
     
@@ -66,22 +67,5 @@ async def main():
 
     for p in reversed(products):
         if p['handle'] not in last_inventory:
-            # Re-formatted for maximum copy-paste safety
-            msg = f"✨ **NEW ARRIVAL**\n\n🚗 **{p['title']}**\n💰 Price: {p['price']}\n🔗 [View Product](https://kollectibles.in/products/{p['handle']})"
-            
-            try:
-                if p['image']:
-                    await client.send_file(TARGET_CHAT, p['image'], caption=msg, parse_mode='md')
-                else:
-                    await client.send_message(TARGET_CHAT, msg, parse_mode='md')
-                print(f"📩 Sent: {p['title']}")
-                await asyncio.sleep(1) 
-            except Exception as e:
-                print(f"⚠️ Send Error: {e}")
-
-    with open("inventory.json", "w") as f:
-        json.dump(current_inventory, f, indent=4)
-    print("✅ Done!")
-
-if __name__ == "__main__":
-    asyncio.run(main())
+            # The Mention Hack
+            msg = f"🔔 {MY_HANDLE} **NEW DROP!**\n\n🚗 **{p['title']}**\n💰 Price: {p['price']}\n🔗 [View
