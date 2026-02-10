@@ -33,8 +33,9 @@ async def main():
     headers = {'User-Agent': 'Mozilla/5.0'}
     try:
         response = requests.get(MONITOR_URL, headers=headers, timeout=15)
-        products = response.json().get('products', [])[:10]
-        print(f"🔎 Found {len(products)} products.")
+        # We take the top 10, then REVERSE them so the newest stays at the bottom of the chat
+        products = response.json().get('products', [])[:10][::-1]
+        print(f"🔎 Found {len(products)} products (Reversed for Chat Order).")
     except Exception as e:
         print(f"❌ Scrape Error: {e}")
         products = []
@@ -50,14 +51,14 @@ async def main():
             'price': price
         }
 
-    # Compare
+    # Compare and Notify
     for p_id, data in current_inventory.items():
         if data['available'] and p_id not in last_inventory:
             msg = f"✨ NEW DROP\n\n🚗 {data['title']}\n💰 Price: ₹{data['price']}\n🔗 {BASE_URL}/products/{data['handle']}"
             await client.send_message(TARGET_CHAT, msg)
             print(f"📩 Sent: {data['title']}")
 
-    # Save (This prevents the Git 128 error)
+    # Save State
     with open("inventory.json", "w") as f:
         json.dump(current_inventory, f, indent=4)
     print("✅ Done!")
