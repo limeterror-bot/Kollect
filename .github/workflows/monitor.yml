@@ -1,0 +1,42 @@
+name: Kollectibles Monitor
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # This tells GitHub to run the bot every 5 minutes
+  workflow_dispatch:       # This adds a manual "Run workflow" button for testing
+
+jobs:
+  scrape-and-notify:
+    runs-on: ubuntu-latest
+    
+    # Crucial: This allows the bot to write the inventory.json file back to your repo
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install requests telethon
+
+      - name: Run Scraper
+        env:
+          # This pulls your hidden keys from "Secrets" into the script
+          API_ID: ${{ secrets.API_ID }}
+          API_HASH: ${{ secrets.API_HASH }}
+          SESSION_STR: ${{ secrets.SESSION_STR }}
+        run: python scraper.py
+
+      - name: Save Memory (inventory.json)
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add inventory.json
+          # Only commit if the file actually changed (to avoid errors)
+          git commit -m "Automated inventory update" || echo "No changes to commit"
+          git push
