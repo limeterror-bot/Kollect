@@ -1,38 +1,38 @@
 import os
 import json
-import asyncio
 import requests
 from bs4 import BeautifulSoup
-from telethon import TelegramClient
-from telethon.sessions import StringSession
 
 # --- CONFIG ---
-API_ID = int(os.environ.get("API_ID", 0))
-API_HASH = os.environ.get("API_HASH", "")
-SESSION_STR = os.environ.get("SESSION_STR", "")
-
-# 🛠️ UPDATE THESE:
+# Get these from GitHub Secrets
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 TARGET_CHAT = -1003773854304  # Your Channel ID
-MY_HANDLE = "@lemonsnickers"  # Your @username inside quotes
+MY_HANDLE = "@lemonsnickers"
 
 PAGE_URL = "https://kollectibles.in/collections/mini-gt-india?filter.v.availability=1&sort_by=created-descending"
 
-async def main():
-    print("🚀 Running Audio-Force Monitor...")
-    client = TelegramClient(StringSession(SESSION_STR), API_ID, API_HASH)
-    await client.connect()
+def send_telegram(msg, image_url=None):
+    """Sends message via Bot API (Appears as the Bot, not You)"""
+    if image_url:
+        url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
+        data = {"chat_id": TARGET_CHAT, "photo": image_url, "caption": msg, "parse_mode": "HTML"}
+    else:
+        url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+        data = {"chat_id": TARGET_CHAT, "text": msg, "parse_mode": "HTML"}
     
-    if not await client.is_user_authorized():
-        print("❌ Auth Failed")
-        return
+    r = requests.post(url, data=data)
+    return r.json()
 
+def main():
+    print("🚀 Running Bot-Monitor...")
+    
     try:
         with open("inventory.json", "r") as f:
             last_inventory = json.load(f)
     except FileNotFoundError:
         last_inventory = {}
 
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+    headers = {'User-Agent': 'Mozilla/5.0'}
     
     try:
         response = requests.get(PAGE_URL, headers=headers, timeout=15)
@@ -67,26 +67,21 @@ async def main():
 
     for p in reversed(products):
         if p['handle'] not in last_inventory:
-            # Using Triple Quotes to prevent line-break errors
-            msg = f"""🔔 {MY_HANDLE} **NEW DROP!**
+            msg = f"""🚨 <b>{MY_HANDLE} NEW DROP!</b>
 
-🚗 **{p['title']}**
+🚗 <b>{p['title']}</b>
 💰 Price: {p['price']}
-🔗 [View Product](https://kollectibles.in/products/{p['handle']})"""
+🔗 <a href='https://kollectibles.in/products/{p['handle']}'>View Product</a>"""
             
-            try:
-                if p['image']:
-                    await client.send_file(TARGET_CHAT, p['image'], caption=msg, parse_mode='md', silent=False)
-                else:
-                    await client.send_message(TARGET_CHAT, msg, parse_mode='md', silent=False)
-                print(f"📩 Sent: {p['title']}")
-                await asyncio.sleep(2) 
-            except Exception as e:
-                print(f"⚠️ Send Error: {e}")
+            res = send_telegram(msg, p['image'])
+            if res.get("ok"):
+                print(f"📩 Bot Sent: {p['title']}")
+            else:
+                print(f"⚠️ Bot Error: {res}")
 
     with open("inventory.json", "w") as f:
         json.dump(current_inventory, f, indent=4)
-    print("✅ Run Complete.")
+    print("✅ Done!")
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
