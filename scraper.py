@@ -3,16 +3,19 @@ import json
 import requests
 from bs4 import BeautifulSoup
 
-# --- CONFIG ---
-# Get these from GitHub Secrets
+# --- CONFIG FROM SECRETS ---
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
-TARGET_CHAT = -1003773854304  # Your Channel ID
-MY_HANDLE = "@lemonsnickers"
+TARGET_CHAT = os.environ.get("TARGET_CHAT", "")
+MY_HANDLE = os.environ.get("MY_HANDLE", "")
 
 PAGE_URL = "https://kollectibles.in/collections/mini-gt-india?filter.v.availability=1&sort_by=created-descending"
 
 def send_telegram(msg, image_url=None):
-    """Sends message via Bot API (Appears as the Bot, not You)"""
+    """Sends message via Bot API"""
+    if not BOT_TOKEN or not TARGET_CHAT:
+        print("❌ Missing BOT_TOKEN or TARGET_CHAT in Secrets!")
+        return {"ok": False}
+
     if image_url:
         url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendPhoto"
         data = {"chat_id": TARGET_CHAT, "photo": image_url, "caption": msg, "parse_mode": "HTML"}
@@ -20,19 +23,24 @@ def send_telegram(msg, image_url=None):
         url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
         data = {"chat_id": TARGET_CHAT, "text": msg, "parse_mode": "HTML"}
     
-    r = requests.post(url, data=data)
-    return r.json()
+    try:
+        r = requests.post(url, data=data, timeout=15)
+        return r.json()
+    except Exception as e:
+        print(f"⚠️ Network Error: {e}")
+        return {"ok": False}
 
 def main():
-    print("🚀 Running Bot-Monitor...")
+    print("🚀 Running Secret-Based Monitor...")
     
+    # Check if inventory exists
     try:
         with open("inventory.json", "r") as f:
             last_inventory = json.load(f)
     except FileNotFoundError:
         last_inventory = {}
 
-    headers = {'User-Agent': 'Mozilla/5.0'}
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
     
     try:
         response = requests.get(PAGE_URL, headers=headers, timeout=15)
@@ -77,7 +85,7 @@ def main():
             if res.get("ok"):
                 print(f"📩 Bot Sent: {p['title']}")
             else:
-                print(f"⚠️ Bot Error: {res}")
+                print(f"⚠️ Bot Error: {res.get('description', 'Unknown Error')}")
 
     with open("inventory.json", "w") as f:
         json.dump(current_inventory, f, indent=4)
