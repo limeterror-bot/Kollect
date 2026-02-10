@@ -11,14 +11,13 @@ API_ID = int(os.environ.get("API_ID", 0))
 API_HASH = os.environ.get("API_HASH", "")
 SESSION_STR = os.environ.get("SESSION_STR", "")
 
-# 🛠️ UPDATE THESE:
-TARGET_CHAT = -100123456789  # Your Channel ID
-MY_HANDLE = "@lemonsnickers"  # Your @username inside quotes
+# 🛠️ UPDATE THIS: Your Channel ID (e.g. -100...) or "@ChannelUsername"
+TARGET_CHAT = -100123456789 
 
 PAGE_URL = "https://kollectibles.in/collections/mini-gt-india?filter.v.availability=1&sort_by=created-descending"
 
 async def main():
-    print("🚀 Running Monitor with @Mention...")
+    print("🚀 Running Clean Monitor...")
     client = TelegramClient(StringSession(SESSION_STR), API_ID, API_HASH)
     await client.connect()
     
@@ -65,11 +64,11 @@ async def main():
 
     current_inventory = {p['handle']: p for p in products}
 
+    # Reverse so the newest item is sent last (appears at the bottom of the chat)
     for p in reversed(products):
         if p['handle'] not in last_inventory:
-            # We keep the mention here in the text
             msg = (
-                f"🔔 {MY_HANDLE} **NEW DROP!**\n\n"
+                f"✨ **NEW ARRIVAL**\n\n"
                 f"🚗 **{p['title']}**\n"
                 f"💰 Price: {p['price']}\n"
                 f"🔗 [View Product](https://kollectibles.in/products/{p['handle']})"
@@ -77,18 +76,6 @@ async def main():
             
             try:
                 if p['image']:
-                    # Removed 'silent=False' so it uses default Telegram behavior
                     await client.send_file(TARGET_CHAT, p['image'], caption=msg, parse_mode='md')
                 else:
                     await client.send_message(TARGET_CHAT, msg, parse_mode='md')
-                print(f"📩 Sent: {p['title']}")
-                await asyncio.sleep(1) 
-            except Exception as e:
-                print(f"⚠️ Send Error: {e}")
-
-    with open("inventory.json", "w") as f:
-        json.dump(current_inventory, f, indent=4)
-    print("✅ Run Complete.")
-
-if __name__ == "__main__":
-    asyncio.run(main())
