@@ -11,11 +11,9 @@ API_ID = int(os.environ.get("API_ID", 0))
 API_HASH = os.environ.get("API_HASH", "")
 SESSION_STR = os.environ.get("SESSION_STR", "")
 
-# 🛠️ UPDATE THIS: Use your Channel ID (e.g., -100...) or @username
-TARGET_CHAT = -100123456789 
-
-# 🛠️ UPDATE THIS: Your actual Telegram @username to force a notification ping
-MY_HANDLE = "@lemonsnickers" 
+# 🛠️ UPDATE THESE TWO:
+TARGET_CHAT = -100123456789 # Replace with your Channel ID
+MY_HANDLE = "@your_username" # Replace with your @username
 
 PAGE_URL = "https://kollectibles.in/collections/mini-gt-india?filter.v.availability=1&sort_by=created-descending"
 
@@ -48,7 +46,6 @@ async def main():
             price_el = card.find('span', class_='price-item--regular')
             img_el = card.find('img')
             
-            # Extract Image URL cleanly
             img_url = None
             if img_el:
                 img_src = img_el.get('src') or img_el.get('data-src')
@@ -66,4 +63,42 @@ async def main():
         print(f"❌ Scrape Error: {e}")
         products = []
 
-    current_inventory = {p['handle']: p for p in
+    # --- FIX WAS HERE ---
+    current_inventory = {p['handle']: p for p in products}
+
+    for p in reversed(products):
+        if p['handle'] not in last_inventory:
+            msg = (
+                f"🔔 {MY_HANDLE} **NEW DROP!**\n\n"
+                f"🚗 **{p['title']}**\n"
+                f"💰 Price: {p['price']}\n"
+                f"🔗 [View Product](https://kollectibles.in/products/{p['handle']})"
+            )
+            
+            try:
+                if p['image']:
+                    await client.send_file(
+                        TARGET_CHAT, 
+                        p['image'], 
+                        caption=msg, 
+                        parse_mode='md', 
+                        silent=False
+                    )
+                else:
+                    await client.send_message(
+                        TARGET_CHAT, 
+                        msg, 
+                        parse_mode='md', 
+                        silent=False
+                    )
+                print(f"📩 Alert Sent: {p['title']}")
+                await asyncio.sleep(2) 
+            except Exception as e:
+                print(f"⚠️ Send Error: {e}")
+
+    with open("inventory.json", "w") as f:
+        json.dump(current_inventory, f, indent=4)
+    print("✅ Run Complete.")
+
+if __name__ == "__main__":
+    asyncio.run(main())
