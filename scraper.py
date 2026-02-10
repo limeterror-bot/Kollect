@@ -2,6 +2,7 @@ import os
 import json
 import asyncio
 import requests
+from bs4 import BeautifulSoup
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 
@@ -10,12 +11,11 @@ API_ID = int(os.environ.get("API_ID", 0))
 API_HASH = os.environ.get("API_HASH", "")
 SESSION_STR = os.environ.get("SESSION_STR", "")
 TARGET_CHAT = 'me'
-BASE_URL = "https://kollectibles.in"
-# We pull a larger batch (50) to make sure we don't miss anything after filtering
-MONITOR_URL = f"{BASE_URL}/collections/mini-gt-india/products.json?limit=50"
+# We use the EXACT link you provided
+PAGE_URL = "https://kollectibles.in/collections/mini-gt-india?filter.v.availability=1&sort_by=created-descending"
 
 async def main():
-    print("🚀 Initializing Smart-Sort Monitor...")
+    print("🚀 Initializing Visual-Order Scraper...")
     client = TelegramClient(StringSession(SESSION_STR), API_ID, API_HASH)
     await client.connect()
     
@@ -29,25 +29,29 @@ async def main():
     except FileNotFoundError:
         last_inventory = {}
 
-    headers = {'User-Agent': 'Mozilla/5.0'}
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
     
     try:
-        response = requests.get(MONITOR_URL, headers=headers, timeout=15)
-        all_products = response.json().get('products', [])
+        response = requests.get(PAGE_URL, headers=headers, timeout=15)
+        soup = BeautifulSoup(response.text, 'html.parser')
         
-        # 1. Filter for In-Stock only
-        instock_products = [
-            p for p in all_products 
-            if any(v['available'] for v in p['variants'])
-        ]
+        # This finds the product cards in the order they appear on screen
+        cards = soup.select('.grid__item')[:10]
         
-        # 2. SORT MANUALLY: Newest ID first
-        # This fixes the Shopify sorting issue permanently.
-        instock_products.sort(key=lambda x: x['id'], reverse=True)
+        products = []
+        for card in cards:
+            title_el = card.select_one('.card__heading')
+            link_el = card.select_one('a.full-unstyled-link')
+            price_el = card.select_one('.price-item--regular')
+            
+            if title_el and link_el:
+                title = title_el.text.strip()
+                handle = link_el['href'].split('/')[-1]
+                price = price_el.text.strip() if price_el else "N/A"
+                # We use the handle as the ID since we are scraping HTML
+                products.append({'title': title, 'handle': handle, 'price': price})
         
-        # 3. Take the top 10 newest
-        products = instock_products[:10]
-        print(f"🔎 Found {len(products)} in-stock products, sorted by Newest ID.")
+        print(f"🔎 Captured {len(products)} items in webpage sequence.")
         
     except Exception as e:
         print(f"❌ Scrape Error: {e}")
@@ -55,23 +59,16 @@ async def main():
 
     current_inventory = {}
     for p in products:
-        p_id = str(p['id'])
-        price = p['variants'][0]['price'] if p['variants'] else "N/A"
-        current_inventory[p_id] = {
-            'title': p['title'], 
-            'available': True,
-            'handle': p['handle'],
-            'price': price
-        }
+        current_inventory[p['handle']] = p
 
-    # Reverse for Telegram display (so the #1 newest is at the bottom of the chat)
-    for p_id, data in list(current_inventory.items())[::-1]:
-        if p_id not in last_inventory:
+    # Process in reverse for Telegram so the #1 item is at the bottom
+    for handle, data in list(current_inventory.items())[::-1]:
+        if handle not in last_inventory:
             msg = (
                 f"✨ **NEW ARRIVAL**\n\n"
                 f"🚗 **{data['title']}**\n"
-                f"💰 Price: ₹{data['price']}\n"
-                f"🔗 [View Product]({BASE_URL}/products/{data['handle']})"
+                f"💰 Price: {data['price']}\n"
+                f"🔗 [View Product](https://kollectibles.in/products/{data['handle']})"
             )
             await client.send_message(TARGET_CHAT, msg, parse_mode='md')
             print(f"📩 Alert: {data['title']}")
