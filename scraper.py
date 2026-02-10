@@ -11,7 +11,7 @@ API_ID = int(os.environ.get("API_ID", 0))
 API_HASH = os.environ.get("API_HASH", "")
 SESSION_STR = os.environ.get("SESSION_STR", "")
 
-# 🛠️ UPDATE THIS: Your Channel ID (e.g. -100...) or "@ChannelUsername"
+# 🛠️ UPDATE THIS: Your Channel ID (e.g. -100...)
 TARGET_CHAT = -100123456789 
 
 PAGE_URL = "https://kollectibles.in/collections/mini-gt-india?filter.v.availability=1&sort_by=created-descending"
@@ -64,18 +64,9 @@ async def main():
 
     current_inventory = {p['handle']: p for p in products}
 
-    # Reverse so the newest item is sent last (appears at the bottom of the chat)
     for p in reversed(products):
         if p['handle'] not in last_inventory:
             msg = (
                 f"✨ **NEW ARRIVAL**\n\n"
                 f"🚗 **{p['title']}**\n"
-                f"💰 Price: {p['price']}\n"
-                f"🔗 [View Product](https://kollectibles.in/products/{p['handle']})"
-            )
-            
-            try:
-                if p['image']:
-                    await client.send_file(TARGET_CHAT, p['image'], caption=msg, parse_mode='md')
-                else:
-                    await client.send_message(TARGET_CHAT, msg, parse_mode='md')
+                f"💰 Price: {
