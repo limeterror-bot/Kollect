@@ -66,7 +66,22 @@ async def main():
 
     for p in reversed(products):
         if p['handle'] not in last_inventory:
-            msg = (
-                f"✨ **NEW ARRIVAL**\n\n"
-                f"🚗 **{p['title']}**\n"
-                f"💰 Price: {
+            # Re-formatted for maximum copy-paste safety
+            msg = f"✨ **NEW ARRIVAL**\n\n🚗 **{p['title']}**\n💰 Price: {p['price']}\n🔗 [View Product](https://kollectibles.in/products/{p['handle']})"
+            
+            try:
+                if p['image']:
+                    await client.send_file(TARGET_CHAT, p['image'], caption=msg, parse_mode='md')
+                else:
+                    await client.send_message(TARGET_CHAT, msg, parse_mode='md')
+                print(f"📩 Sent: {p['title']}")
+                await asyncio.sleep(1) 
+            except Exception as e:
+                print(f"⚠️ Send Error: {e}")
+
+    with open("inventory.json", "w") as f:
+        json.dump(current_inventory, f, indent=4)
+    print("✅ Done!")
+
+if __name__ == "__main__":
+    asyncio.run(main())
