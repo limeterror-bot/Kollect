@@ -1,4 +1,40 @@
 {
+    "lb-works-toyota-gr-supra-red-1-64-scale-model-car-mini-gt": {
+        "title": "LB\u2605WORKS Toyota GR Supra Red 1:64 scale model car - Mini GT",
+        "handle": "lb-works-toyota-gr-supra-red-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,399.00",
+        "image": "https://kollectibles.in/cdn/shop/files/MGT01103_BOX.jpg?v=1770969813&width=533"
+    },
+    "volkswagen-id-buzz-candy-white-pomelo-yellow-1-64-scale-model-car-mini-gt": {
+        "title": "Volkswagen ID.Buzz Candy White/ Pomelo Yellow 1:64 scale model car - Mini GT",
+        "handle": "volkswagen-id-buzz-candy-white-pomelo-yellow-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,199.00",
+        "image": "https://kollectibles.in/cdn/shop/files/MGT01110_BOX.jpg?v=1770959179&width=533"
+    },
+    "lamborghini-countach-25th-anniversary-white-1-64-scale-model-car-mini-gt": {
+        "title": "Lamborghini Countach 25th Anniversary White 1:64 scale model car - Mini GT",
+        "handle": "lamborghini-countach-25th-anniversary-white-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,199.00",
+        "image": "https://kollectibles.in/cdn/shop/files/MGT01134_BOX.jpg?v=1770899346&width=533"
+    },
+    "acura-arx-06-gtp-10-wayne-taylor-racing-with-andretti-2024-imsa-daytona-24-hrs-1-64-scale-model-car-mini-gt": {
+        "title": "Acura ARX-06 GTP #10 Wayne Taylor Racing with Andretti 2024 IMSA Daytona 24 Hrs 1:64 scale model car - Mini GT",
+        "handle": "acura-arx-06-gtp-10-wayne-taylor-racing-with-andretti-2024-imsa-daytona-24-hrs-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,649.00",
+        "image": "https://kollectibles.in/cdn/shop/files/MGT01056_FRONTPERSPEC.jpg?v=1770822459&width=533"
+    },
+    "bmw-750il-sorrento-blue-metallic-1-64-scale-model-car-mini-gt": {
+        "title": "BMW 750IL Sorrento Blue Metallic 1:64 scale model car - Mini GT",
+        "handle": "bmw-750il-sorrento-blue-metallic-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,199.00",
+        "image": "https://kollectibles.in/cdn/shop/files/MGT00894_BOX.jpg?v=1770807334&width=533"
+    },
+    "mazda-rx-7-fd-lb-super-silhouette-1-64-scale-model-car-mini-gt": {
+        "title": "Mazda RX-7 FD LB - Super Silhouette 1:64 scale model car - Mini GT",
+        "handle": "mazda-rx-7-fd-lb-super-silhouette-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,399.00",
+        "image": "https://kollectibles.in/cdn/shop/files/MGT01101_frontperspective.jpg?v=1770803136&width=533"
+    },
     "chevrolet-silverado-dually-vintage-spec-v1-1-64-scale-model-car-mini-gt": {
         "title": "Chevrolet Silverado Dually Vintage Spec V1 1:64 scale model car - KAIDOHOUSE X Mini GT",
         "handle": "chevrolet-silverado-dually-vintage-spec-v1-1-64-scale-model-car-mini-gt",
@@ -22,41 +58,5 @@
         "handle": "bmw-750il-aspen-silver-metallic-1-64-scale-model-car-mini-gt",
         "price": "Rs. 1,199.00",
         "image": "https://kollectibles.in/cdn/shop/files/MGT00792_BOX.jpg?v=1770485634&width=533"
-    },
-    "ford-mustang-mach1-grabber-yellow-1-64-scale-model-car-mini-gt": {
-        "title": "Ford Mustang Mach1 Grabber Yellow 1:64 scale model car - Mini GT",
-        "handle": "ford-mustang-mach1-grabber-yellow-1-64-scale-model-car-mini-gt",
-        "price": "Rs. 1,199.00",
-        "image": "https://kollectibles.in/cdn/shop/files/MGT01139_BOX.jpg?v=1770383428&width=533"
-    },
-    "lamborghini-revuelto-viola-30th-matte-1-64-scale-model-car-mini-gt": {
-        "title": "Lamborghini Revuelto Viola 30th Matte 1:64 scale model car - Mini GT",
-        "handle": "lamborghini-revuelto-viola-30th-matte-1-64-scale-model-car-mini-gt",
-        "price": "Rs. 1,199.00",
-        "image": "https://kollectibles.in/cdn/shop/files/MGT01121_BOX.jpg?v=1770294544&width=533"
-    },
-    "lamborghini-countach-lb-works-red-1-64-scale-model-car-mini-gt": {
-        "title": "Lamborghini Countach LB-WORKS Red 1:64 scale model car - Mini GT",
-        "handle": "lamborghini-countach-lb-works-red-1-64-scale-model-car-mini-gt",
-        "price": "Rs. 1,199.00",
-        "image": "https://kollectibles.in/cdn/shop/files/MGT01100_BOX.jpg?v=1770280580&width=533"
-    },
-    "ord-puma-rally1-13-m-sport-ford-wrt-2024-rally-monte-carlo-1-64-scale-model-car-mini-gt": {
-        "title": "Ford Puma Rally1 #13 M-Sport Ford WRT 2024 Rally Monte Carlo 1:64 scale model car - Mini GT",
-        "handle": "ord-puma-rally1-13-m-sport-ford-wrt-2024-rally-monte-carlo-1-64-scale-model-car-mini-gt",
-        "price": "Rs. 1,649.00",
-        "image": "https://kollectibles.in/cdn/shop/files/MGT00974_BOX.jpg?v=1770279309&width=533"
-    },
-    "rb-vcarb-01-22-yuki-tsunoda-2024-f1-2024-bahrain-gp-1-64-scale-model-car-mini-gt": {
-        "title": "RB VCARB 01 #22 Yuki Tsunoda 2024 F1 2024 Bahrain GP 1:64 scale model car - Mini GT",
-        "handle": "rb-vcarb-01-22-yuki-tsunoda-2024-f1-2024-bahrain-gp-1-64-scale-model-car-mini-gt",
-        "price": "Rs. 1,649.00",
-        "image": "https://kollectibles.in/cdn/shop/files/MGT01007_BOX.jpg?v=1770278038&width=533"
-    },
-    "rb-vcarb-01-3-daniel-ricciardo-2024-f1-2024-bahrain-gp-1-64-scale-model-car-1-64-scale-model-car-mini-gt": {
-        "title": "RB VCARB 01 #3 Daniel Ricciardo 2024 F1 2024 Bahrain GP 1:64 scale model car - Mini GT",
-        "handle": "rb-vcarb-01-3-daniel-ricciardo-2024-f1-2024-bahrain-gp-1-64-scale-model-car-1-64-scale-model-car-mini-gt",
-        "price": "Rs. 1,649.00",
-        "image": "https://kollectibles.in/cdn/shop/files/MGT01006_BOX.jpg?v=1770275415&width=533"
     }
 }
