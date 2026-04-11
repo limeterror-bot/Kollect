@@ -11,12 +11,6 @@
         "price": "Rs. 1,199.00",
         "image": "https://kollectibles.in/cdn/shop/files/b2983a53dc0cd2665afc46bf834e42ed20251212045051567.jpg?v=1775811163&width=533"
     },
-    "lb-works-lamborghini-aventador-limited-edition-matte-black-1-64-scale-model-car-mini-gt": {
-        "title": "LB\u2605WORKS Lamborghini Aventador Limited Edition Matte Black 1:64 scale model car - Mini GT",
-        "handle": "lb-works-lamborghini-aventador-limited-edition-matte-black-1-64-scale-model-car-mini-gt",
-        "price": "Rs. 1,199.00",
-        "image": "https://kollectibles.in/cdn/shop/files/4018f01581ac26d0f95ee2f5293753c820250729213752728.jpg?v=1775829241&width=533"
-    },
     "nissan-fairlady-z-kaido-gt-police-1-64-scale-model-car-mini-gt": {
         "title": "Nissan Fairlady Z Kaido GT Police 1:64 scale model car - KAIDOHOUSE X Mini GT",
         "handle": "nissan-fairlady-z-kaido-gt-police-1-64-scale-model-car-mini-gt",
@@ -58,5 +52,11 @@
         "handle": "honda-civic-type-r-2024-pace-car-hrc-1-64-scale-model-car-mini-gt",
         "price": "Rs. 1,399.00",
         "image": "https://kollectibles.in/cdn/shop/files/MGT01079_BOX.jpg?v=1773040640&width=533"
+    },
+    "nissan-skyline-2000-gt-r-kpgc10-kaido-street-v2-1-64-scale-model-car-mini-gt": {
+        "title": "Nissan Skyline 2000 GT-R (KPGC10) Kaido Street V2 1:64 scale model car - KAIDOHOUSE X Mini GT",
+        "handle": "nissan-skyline-2000-gt-r-kpgc10-kaido-street-v2-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,999.00",
+        "image": "https://kollectibles.in/cdn/shop/files/734acf529e9c1a86236a4e1506c24b7320251225041835356.jpg?v=1771938593&width=533"
     }
 }
