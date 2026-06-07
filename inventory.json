@@ -5,12 +5,6 @@
         "price": "Rs. 2,099.00",
         "image": "https://kollectibles.in/cdn/shop/files/KHMG212.jpg?v=1780728393&width=533"
     },
-    "lamborghini-huracan-gt3-evo2-45-dex-imaging-2024-imsa-daytona-1-64-scale-model-car-mini-gt": {
-        "title": "Lamborghini Huracan GT3 EVO2 #45 DEX Imaging 2024 IMSA Daytona 1:64 scale model car - Mini GT",
-        "handle": "lamborghini-huracan-gt3-evo2-45-dex-imaging-2024-imsa-daytona-1-64-scale-model-car-mini-gt",
-        "price": "Rs. 1,399.00",
-        "image": "https://kollectibles.in/cdn/shop/files/90b2fea8215963d4a15ad90f557a7fc220251203054959639.jpeg?v=1780729029&width=533"
-    },
     "toleman-tg184-19-ayrton-senna-1984-monaco-grand-prix-1-64-scale-model-car-mini-gt": {
         "title": "Toleman TG184 #19 Ayrton Senna 1984 Monaco Grand Prix F1 1:64 scale model car - Mini GT",
         "handle": "toleman-tg184-19-ayrton-senna-1984-monaco-grand-prix-1-64-scale-model-car-mini-gt",
@@ -58,5 +52,11 @@
         "handle": "aston-martin-amr24-18-lance-stroll-2024-f1-2024-mini-gt",
         "price": "Rs. 1,799.00",
         "image": "https://kollectibles.in/cdn/shop/files/867bee910aeb732334adaa68e9bed562.jpg?v=1779982262&width=533"
+    },
+    "bmw-m5-touring-brooklyn-grey-metallic-1-64-scale-model-car-mini-gt": {
+        "title": "BMW M5 Touring Brooklyn Grey Metallic 1:64 scale model car - Mini GT",
+        "handle": "bmw-m5-touring-brooklyn-grey-metallic-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,249.00",
+        "image": "https://kollectibles.in/cdn/shop/files/4416aa9d9c4fbca51f8341e74ceb0a7e20260519183059153.jpg?v=1779980230&width=533"
     }
 }
