@@ -11,12 +11,6 @@
         "price": "Rs. 3,448.00",
         "image": "https://kollectibles.in/cdn/shop/files/AstonMartinAMR2414Fernandoalonso2024F1164scalemodelcar-MiniGT.png?v=1782127976&width=533"
     },
-    "porsche-911-gt3-r-77-lamborghini-murcielago-gt-evo-yellow-1-64-scale-model-car-bundle-mini-gt": {
-        "title": "Porsche 911 GT3 R #77 AO Racing 2025 + Lamborghini Murci\u00e9lago GT Evo Yellow 1:64 scale model car bundle - Mini GT",
-        "handle": "porsche-911-gt3-r-77-lamborghini-murcielago-gt-evo-yellow-1-64-scale-model-car-bundle-mini-gt",
-        "price": "Rs. 3,048.00",
-        "image": "https://kollectibles.in/cdn/shop/files/Porsche911GT3R_77AORacing2025_LamborghiniMurcielagoGTEvoYellow164scalemodelcarbundle-MiniGT.png?v=1782128006&width=533"
-    },
     "porsche-911-gt3-r-77-chevrolet-corvette-z06-gt3-r-road-america-test-car-1-64-scale-model-car-bundle-mini-gt": {
         "title": "Porsche 911 GT3 R #77 AO Racing 2025 + Chevrolet Corvette Z06 GT3.R Road America Test Car 1:64 scale model car bundle - Mini GT",
         "handle": "porsche-911-gt3-r-77-chevrolet-corvette-z06-gt3-r-road-america-test-car-1-64-scale-model-car-bundle-mini-gt",
@@ -58,5 +52,11 @@
         "handle": "nissan-silvia-s15-lb-super-silhouette-555-team-mini-gt-liberty-walk-2025-formula-drift-1-64-scale-model-car-mini-gt",
         "price": "Rs. 1,799.00",
         "image": "https://kollectibles.in/cdn/shop/files/nissan-silvia-lb-super-silhouette-2.jpg?v=1781768247&width=533"
+    },
+    "chevrolet-silverado-kaido-intimidator-v1-white-brown-two-tone-1-64-scale-model-kaido-house-x-mini-gt": {
+        "title": "Chevrolet Silverado KAIDO Intimidator V1 White Brown Two-Tone 1:64 scale model - Kaido House x Mini GT",
+        "handle": "chevrolet-silverado-kaido-intimidator-v1-white-brown-two-tone-1-64-scale-model-kaido-house-x-mini-gt",
+        "price": "Rs. 2,099.00",
+        "image": "https://kollectibles.in/cdn/shop/files/KHMG212.jpg?v=1780728393&width=533"
     }
 }
