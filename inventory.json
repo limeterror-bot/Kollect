@@ -11,12 +11,6 @@
         "price": "Rs. 3,448.00",
         "image": "https://kollectibles.in/cdn/shop/files/AstonMartinAMR2414Fernandoalonso2024F1164scalemodelcar-MiniGT.png?v=1782127976&width=533"
     },
-    "porsche-911-gt3-r-77-chevrolet-corvette-z06-gt3-r-road-america-test-car-1-64-scale-model-car-bundle-mini-gt": {
-        "title": "Porsche 911 GT3 R #77 AO Racing 2025 + Chevrolet Corvette Z06 GT3.R Road America Test Car 1:64 scale model car bundle - Mini GT",
-        "handle": "porsche-911-gt3-r-77-chevrolet-corvette-z06-gt3-r-road-america-test-car-1-64-scale-model-car-bundle-mini-gt",
-        "price": "Rs. 3,048.00",
-        "image": "https://kollectibles.in/cdn/shop/files/Porsche911GT3R_77AORacing2025_ChevroletCorvetteZ06GT3.RRoadAmericaTestCar164scalemodelcarbundle-MiniGT.png?v=1782128069&width=533"
-    },
     "nissan-silvia-s13-r-kaido-drift-v1-1-64-scale-model-car-mini-gt-x-kaido-house": {
         "title": "Nissan Silvia S13-R KAIDO DRIFT V1 1:64 scale model car - MINI GT x Kaido House",
         "handle": "nissan-silvia-s13-r-kaido-drift-v1-1-64-scale-model-car-mini-gt-x-kaido-house",
@@ -58,5 +52,11 @@
         "handle": "chevrolet-silverado-kaido-intimidator-v1-white-brown-two-tone-1-64-scale-model-kaido-house-x-mini-gt",
         "price": "Rs. 2,099.00",
         "image": "https://kollectibles.in/cdn/shop/files/KHMG212.jpg?v=1780728393&width=533"
+    },
+    "toleman-tg184-19-ayrton-senna-1984-monaco-grand-prix-1-64-scale-model-car-mini-gt": {
+        "title": "Toleman TG184 #19 Ayrton Senna 1984 Monaco Grand Prix F1 1:64 scale model car - Mini GT",
+        "handle": "toleman-tg184-19-ayrton-senna-1984-monaco-grand-prix-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,399.00",
+        "image": "https://kollectibles.in/cdn/shop/files/7f75efd7707800e641492fda6faac51720250828203921651.jpeg?v=1780729016&width=533"
     }
 }
