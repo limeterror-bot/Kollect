@@ -29,12 +29,6 @@
         "price": "Rs. 1,199.00",
         "image": "https://kollectibles.in/cdn/shop/files/MGT01097_1.jpg?v=1782740420&width=533"
     },
-    "bmw-m4-m-performance-g82-daytona-violet-1-64-scale-model-car-mini-gt": {
-        "title": "BMW M4 M-Performance (G82) Daytona Violet 1:64 scale model car - Mini GT",
-        "handle": "bmw-m4-m-performance-g82-daytona-violet-1-64-scale-model-car-mini-gt",
-        "price": "Rs. 1,199.00",
-        "image": "https://kollectibles.in/cdn/shop/files/MGT01112_2.jpg?v=1782740414&width=533"
-    },
     "nissan-silvia-s13-r-kaido-drift-v1-1-64-scale-model-car-mini-gt-x-kaido-house": {
         "title": "Nissan Silvia S13-R KAIDO DRIFT V1 1:64 scale model car - MINI GT x Kaido House",
         "handle": "nissan-silvia-s13-r-kaido-drift-v1-1-64-scale-model-car-mini-gt-x-kaido-house",
@@ -58,5 +52,11 @@
         "handle": "nissan-skyline-gt-r-dark-metal-gray-nismo-bcnr33-crs-version-1-64-scale-model-car-mini-gt",
         "price": "Rs. 1,199.00",
         "image": "https://kollectibles.in/cdn/shop/files/nissan-skyline-bcnr33-dark-metal-gray-2.jpg?v=1781770600&width=533"
+    },
+    "toyota-supra-veilside-combat-v-i-red-1-64-scale-model-car-mini-gt": {
+        "title": "Toyota Supra VeilSide Combat V-I Red 1:64 scale model car - Mini GT",
+        "handle": "toyota-supra-veilside-combat-v-i-red-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,199.00",
+        "image": "https://kollectibles.in/cdn/shop/files/toyota-supra-veilside-combat-1.jpg?v=1781769430&width=533"
     }
 }
