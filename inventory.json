@@ -1,10 +1,4 @@
 {
-    "lamborghini-countach-25th-anniversary-white-porsche-911-gt3-r-77-ao-racing-2025-imsa-petit-le-mans-1-64-scale-model-car-bundle-mini-gt": {
-        "title": "Lamborghini Countach 25th Anniversary White + Porsche 911 GT3 R #77 AO Racing 2025 IMSA Petit Le Mans 1:64 scale model car bundle - Mini GT",
-        "handle": "lamborghini-countach-25th-anniversary-white-porsche-911-gt3-r-77-ao-racing-2025-imsa-petit-le-mans-1-64-scale-model-car-bundle-mini-gt",
-        "price": "Rs. 2,848.00",
-        "image": "https://kollectibles.in/cdn/shop/files/mgt1143_1134_combo.png?v=1783428304&width=533"
-    },
     "aston-martin-db5-skyfall-battle-damaged-edition-1-64-scale-model-car-mini-gt": {
         "title": "Aston Martin DB5 Skyfall Battle Damaged Edition 1:64 scale model car - Mini GT",
         "handle": "aston-martin-db5-skyfall-battle-damaged-edition-1-64-scale-model-car-mini-gt",
@@ -58,5 +52,11 @@
         "handle": "nissan-skyline-gt-r-dark-metal-gray-nismo-bcnr33-crs-version-1-64-scale-model-car-mini-gt",
         "price": "Rs. 1,199.00",
         "image": "https://kollectibles.in/cdn/shop/files/nissan-skyline-bcnr33-dark-metal-gray-2.jpg?v=1781770600&width=533"
+    },
+    "toyota-supra-veilside-combat-v-i-red-1-64-scale-model-car-mini-gt": {
+        "title": "Toyota Supra VeilSide Combat V-I Red 1:64 scale model car - Mini GT",
+        "handle": "toyota-supra-veilside-combat-v-i-red-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,199.00",
+        "image": "https://kollectibles.in/cdn/shop/files/toyota-supra-veilside-combat-1.jpg?v=1781769430&width=533"
     }
 }
