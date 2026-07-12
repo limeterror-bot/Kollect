@@ -1,10 +1,4 @@
 {
-    "bmw-m3-kaido-works-larry-chen-v1-toyota-supra-a80-top-secret-gt-300-red-chrome-2-car-bundle-kaido-house-x-mini-gt": {
-        "title": "BMW M3 Kaido Works Larry Chen V1 + Toyota Supra (A80) Top Secret GT-300 Red Chrome \u2013 2-Car Bundle (Kaido House x Mini GT)",
-        "handle": "bmw-m3-kaido-works-larry-chen-v1-toyota-supra-a80-top-secret-gt-300-red-chrome-2-car-bundle-kaido-house-x-mini-gt",
-        "price": "Rs. 3,598.00",
-        "image": "https://kollectibles.in/cdn/shop/files/CopyofKHMG0217_1132_combo.png?v=1783831904&width=533"
-    },
     "nissan-skyline-gt-r-r34-kaido-works-greddy-v2-black-with-carbon-1-64-scale-model-car-kaido-house-x-mini-gt": {
         "title": "Nissan Skyline GT-R (R34) Kaido Works GReddy V2 Black with Carbon 1:64 scale model car - Kaido House x Mini GT",
         "handle": "nissan-skyline-gt-r-r34-kaido-works-greddy-v2-black-with-carbon-1-64-scale-model-car-kaido-house-x-mini-gt",
@@ -58,5 +52,11 @@
         "handle": "toyota-gr86-lb-nation-advan-blister-packaging-1-64-scale-model-car-mini-gt",
         "price": "Rs. 1,399.00",
         "image": "https://kollectibles.in/cdn/shop/files/MGT01173_front.jpg?v=1783756571&width=533"
+    },
+    "bentley-batur-bonneville-pearl-blister-packaging-1-64-scale-model-car-mini-gt": {
+        "title": "Bentley Batur Bonneville Pearl 1:64 scale model car - Mini Gt",
+        "handle": "bentley-batur-bonneville-pearl-blister-packaging-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,199.00",
+        "image": "https://kollectibles.in/cdn/shop/files/MGT00969_box.jpg?v=1783756567&width=533"
     }
 }
