@@ -1,10 +1,4 @@
 {
-    "nissan-skyline-gt-r-r34-kaido-works-greddy-v2-black-with-carbon-1-64-scale-model-car-kaido-house-x-mini-gt": {
-        "title": "Nissan Skyline GT-R (R34) Kaido Works GReddy V2 Black with Carbon 1:64 scale model car - Kaido House x Mini GT",
-        "handle": "nissan-skyline-gt-r-r34-kaido-works-greddy-v2-black-with-carbon-1-64-scale-model-car-kaido-house-x-mini-gt",
-        "price": "Rs. 2,099.00",
-        "image": "https://kollectibles.in/cdn/shop/files/Mini-GT-Kaido-House-_222-Nissan-Skyline-GT-R-_R34_-Kaido-Works-GReddy-V2-V1-1-64-Die-Cast-Scale-Model_1800.webp?v=1783782883&width=533"
-    },
     "honda-civic-ef-kaido-manga-v1-silver-1-64-scale-model-car-kaido-house-x-mini-gt": {
         "title": "Honda Civic (EF) Kaido Manga V1 Silver 1:64 scale model car - Kaido House x Mini GT",
         "handle": "honda-civic-ef-kaido-manga-v1-silver-1-64-scale-model-car-kaido-house-x-mini-gt",
@@ -58,5 +52,11 @@
         "handle": "bentley-batur-bonneville-pearl-blister-packaging-1-64-scale-model-car-mini-gt",
         "price": "Rs. 1,199.00",
         "image": "https://kollectibles.in/cdn/shop/files/MGT00969_box.jpg?v=1783756567&width=533"
+    },
+    "lotus-99t-12-ayrton-senna-1987-monaco-grand-prix-winner-blister-packaging-1-64-scale-model-car-mini-gt": {
+        "title": "Lotus 99T #12 Ayrton Senna 1987 Monaco Grand Prix Winner 1:64 scale model car - Mini Gt",
+        "handle": "lotus-99t-12-ayrton-senna-1987-monaco-grand-prix-winner-blister-packaging-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,399.00",
+        "image": "https://kollectibles.in/cdn/shop/files/MGT01088_2.jpg?v=1783756564&width=533"
     }
 }
