@@ -35,12 +35,6 @@
         "price": "Rs. 1,649.00",
         "image": "https://kollectibles.in/cdn/shop/files/mini-gt-oracle-red-bull-racing-rb19-max-verstappen-2023-las-vegas-gp-winner-front-angled.jpg?v=1789886424&width=533"
     },
-    "mclaren-mp4-4-12-ayrton-senna-1988-japanese-grand-prix-winner-white-red-1-64-scale-model-car-mini-gt": {
-        "title": "McLaren MP4/4 #12 Ayrton Senna 1988 Japanese Grand Prix Winner White / Red 1:64 scale model car - Mini GT",
-        "handle": "mclaren-mp4-4-12-ayrton-senna-1988-japanese-grand-prix-winner-white-red-1-64-scale-model-car-mini-gt",
-        "price": "Rs. 1,399.00",
-        "image": "https://kollectibles.in/cdn/shop/files/mini-gt-mclaren-mp4-4-12-ayrton-senna-1988-japanese-gp-winner-front-overhead.jpg?v=1789886394&width=533"
-    },
     "ford-mustang-dark-horse-2024-grabber-blue-1-64-scale-model-car-mini-gt": {
         "title": "Ford Mustang Dark Horse 2024 Grabber Blue 1:64 scale model car - Mini GT",
         "handle": "ford-mustang-dark-horse-2024-grabber-blue-1-64-scale-model-car-mini-gt",
@@ -58,5 +52,11 @@
         "handle": "lb-works-lamborghini-aventador-limited-edition-orange-mdx-2025-1-64-scale-model-car-mini-gt",
         "price": "Rs. 1,249.00",
         "image": "https://kollectibles.in/cdn/shop/files/mini-gt-lbworks-lamborghini-aventador-orange-mdx-2025-packaging.jpg?v=1788967333&width=533"
+    },
+    "volkswagen-id-buzz-mizu-design-1-64-scale-model-car-mini-gt": {
+        "title": "Volkswagen ID. Buzz Mizu Design 1:64 scale model car - Mini GT",
+        "handle": "volkswagen-id-buzz-mizu-design-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,399.00",
+        "image": "https://kollectibles.in/cdn/shop/files/mini-gt-volkswagen-id-buzz-mizu-design-front.jpg?v=1788967313&width=533"
     }
 }
