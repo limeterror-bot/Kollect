@@ -1,4 +1,28 @@
 {
+    "nissan-skyline-gt-r-r34-kaido-works-v4-lime-green-1-64-scale-model-car-kaido-house-x-mini-gt": {
+        "title": "Nissan Skyline GT-R (R34) Kaido Works V4 Lime Green 1:64 scale model car - Kaido House x Mini GT",
+        "handle": "nissan-skyline-gt-r-r34-kaido-works-v4-lime-green-1-64-scale-model-car-kaido-house-x-mini-gt",
+        "price": "Rs. 2,099.00",
+        "image": "https://kollectibles.in/cdn/shop/files/kaido-house-nissan-skyline-gt-r-r34-kaido-works-v4-product-sheet.jpg?v=1793036872&width=533"
+    },
+    "bugatti-bolide-yellow-1-64-scale-model-car-mini-gt": {
+        "title": "Bugatti Bolide Yellow 1:64 scale model car - Mini GT",
+        "handle": "bugatti-bolide-yellow-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,699.00",
+        "image": "https://kollectibles.in/cdn/shop/files/mini-gt-bugatti-bolide-yellow-front.jpg?v=1793036871&width=533"
+    },
+    "aston-martin-db5-fiesta-red-1-64-scale-model-car-mini-gt": {
+        "title": "Aston Martin DB5 Fiesta Red 1:64 scale model car - Mini GT",
+        "handle": "aston-martin-db5-fiesta-red-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,249.00",
+        "image": "https://kollectibles.in/cdn/shop/files/mini-gt-aston-martin-db5-fiesta-red-box.jpg?v=1793036869&width=533"
+    },
+    "mclaren-mp4-6-1-ayrton-senna-1991-japanese-grand-prix-2nd-place-1-64-scale-model-car-mini-gt": {
+        "title": "McLaren MP4/6 #1 Ayrton Senna 1991 Japanese Grand Prix 2nd Place 1:64 scale model car - Mini GT",
+        "handle": "mclaren-mp4-6-1-ayrton-senna-1991-japanese-grand-prix-2nd-place-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,399.00",
+        "image": "https://kollectibles.in/cdn/shop/files/mini-gt-mclaren-mp4-6-senna-1991-japanese-gp-front.jpg?v=1793036868&width=533"
+    },
     "mercedes-benz-190e-2-5-16-evolution-ii-37-1995-se-asia-touring-car-championship-silver-1-64-scale-model-car-mini-gt": {
         "title": "Mercedes-Benz 190E 2.5-16 Evolution II #37 1995 SE Asia Touring Car Championship Silver 1:64 scale model car - Mini GT",
         "handle": "mercedes-benz-190e-2-5-16-evolution-ii-37-1995-se-asia-touring-car-championship-silver-1-64-scale-model-car-mini-gt",
@@ -34,29 +58,5 @@
         "handle": "acura-arx-06-gtp-93-acura-meyer-shank-racing-2025-imsa-daytona-24-hrs-white-black-1-64-scale-model-car-mini-gt",
         "price": "Rs. 1,699.00",
         "image": "https://kollectibles.in/cdn/shop/files/mini-gt-acura-arx-06-gtp-93-meyer-shank-daytona-2025-box.jpg?v=1791298756&width=533"
-    },
-    "honda-civic-type-r-ultimate-edition-white-1-64-scale-model-car-mini-gt": {
-        "title": "Honda Civic Type R Ultimate Edition White 1:64 scale model car - Mini GT",
-        "handle": "honda-civic-type-r-ultimate-edition-white-1-64-scale-model-car-mini-gt",
-        "price": "Rs. 1,199.00",
-        "image": "https://kollectibles.in/cdn/shop/files/mini-gt-honda-civic-type-r-ultimate-edition-white-box.jpg?v=1791298755&width=533"
-    },
-    "bmw-m-hybrid-v8-hypercar-15-bmw-m-team-wrt-2024-le-mans-24-hrs-white-blue-1-64-scale-model-car-mini-gt": {
-        "title": "BMW M Hybrid V8 Hypercar #15 BMW M Team WRT 2024 Le Mans 24 Hrs White / Blue 1:64 scale model car - Mini GT",
-        "handle": "bmw-m-hybrid-v8-hypercar-15-bmw-m-team-wrt-2024-le-mans-24-hrs-white-blue-1-64-scale-model-car-mini-gt",
-        "price": "Rs. 1,699.00",
-        "image": "https://kollectibles.in/cdn/shop/files/mini-gt-bmw-m-hybrid-v8-hypercar-15-le-mans-2024-box.jpg?v=1791298755&width=533"
-    },
-    "bmw-m4-gt3-evo-90-fist-team-aai-2025-china-gt-blue-1-64-scale-model-car-mini-gt": {
-        "title": "BMW M4 GT3 EVO #90 FIST Team AAI 2025 China GT Blue 1:64 scale model car - Mini GT",
-        "handle": "bmw-m4-gt3-evo-90-fist-team-aai-2025-china-gt-blue-1-64-scale-model-car-mini-gt",
-        "price": "Rs. 1,699.00",
-        "image": "https://kollectibles.in/cdn/shop/files/mini-gt-bmw-m4-gt3-evo-90-fist-team-aai-china-gt-box.jpg?v=1790767141&width=533"
-    },
-    "hyundai-concept-n-vision-74-vp2-silver-1-64-scale-model-car-mini-gt": {
-        "title": "Hyundai Concept N Vision 74 (VP2) Silver 1:64 scale model car - Mini GT",
-        "handle": "hyundai-concept-n-vision-74-vp2-silver-1-64-scale-model-car-mini-gt",
-        "price": "Rs. 1,399.00",
-        "image": "https://kollectibles.in/cdn/shop/files/mini-gt-hyundai-concept-n-vision-74-vp2-silver-front.jpg?v=1790767119&width=533"
     }
 }
