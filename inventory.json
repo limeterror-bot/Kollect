@@ -1,10 +1,4 @@
 {
-    "nissan-skyline-gt-r-r34-kaido-works-v4-lime-green-1-64-scale-model-car-kaido-house-x-mini-gt": {
-        "title": "Nissan Skyline GT-R (R34) Kaido Works V4 Lime Green 1:64 scale model car - Kaido House x Mini GT",
-        "handle": "nissan-skyline-gt-r-r34-kaido-works-v4-lime-green-1-64-scale-model-car-kaido-house-x-mini-gt",
-        "price": "Rs. 2,099.00",
-        "image": "https://kollectibles.in/cdn/shop/files/kaido-house-nissan-skyline-gt-r-r34-kaido-works-v4-product-sheet.jpg?v=1793036872&width=533"
-    },
     "bugatti-bolide-yellow-1-64-scale-model-car-mini-gt": {
         "title": "Bugatti Bolide Yellow 1:64 scale model car - Mini GT",
         "handle": "bugatti-bolide-yellow-1-64-scale-model-car-mini-gt",
@@ -58,5 +52,11 @@
         "handle": "acura-arx-06-gtp-93-acura-meyer-shank-racing-2025-imsa-daytona-24-hrs-white-black-1-64-scale-model-car-mini-gt",
         "price": "Rs. 1,699.00",
         "image": "https://kollectibles.in/cdn/shop/files/mini-gt-acura-arx-06-gtp-93-meyer-shank-daytona-2025-box.jpg?v=1791298756&width=533"
+    },
+    "honda-civic-type-r-ultimate-edition-white-1-64-scale-model-car-mini-gt": {
+        "title": "Honda Civic Type R Ultimate Edition White 1:64 scale model car - Mini GT",
+        "handle": "honda-civic-type-r-ultimate-edition-white-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,199.00",
+        "image": "https://kollectibles.in/cdn/shop/files/mini-gt-honda-civic-type-r-ultimate-edition-white-box.jpg?v=1791298755&width=533"
     }
 }
