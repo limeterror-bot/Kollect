@@ -1,4 +1,28 @@
 {
+    "volkswagen-t1-street-battle-spec-v1-1-64-scale-model-car-kaido-house-x-mini-gt": {
+        "title": "Volkswagen T1 Street Battle Spec V1 1:64 scale model car - Kaido House x Mini GT",
+        "handle": "volkswagen-t1-street-battle-spec-v1-1-64-scale-model-car-kaido-house-x-mini-gt",
+        "price": "Rs. 2,099.00",
+        "image": "https://kollectibles.in/cdn/shop/files/KHMG292-product-sheet.jpg?v=1795179144&width=533"
+    },
+    "nissan-skyline-gt-r-r32-kaido-works-v1-1-64-scale-model-car-kaido-house-x-mini-gt": {
+        "title": "Nissan Skyline GT-R (R32) Kaido Works V1 1:64 scale model car - Kaido House x Mini GT",
+        "handle": "nissan-skyline-gt-r-r32-kaido-works-v1-1-64-scale-model-car-kaido-house-x-mini-gt",
+        "price": "Rs. 2,099.00",
+        "image": "https://kollectibles.in/cdn/shop/files/KHMG273-front.jpg?v=1795177448&width=533"
+    },
+    "land-rover-defender-110-crew-cab-007-skyfall-1-64-scale-model-car-mini-gt": {
+        "title": "Land Rover Defender 110 Crew Cab 007 Skyfall 1:64 scale model car - Mini GT",
+        "handle": "land-rover-defender-110-crew-cab-007-skyfall-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,499.00",
+        "image": "https://kollectibles.in/cdn/shop/files/MGT00918-front.jpg?v=1795177447&width=533"
+    },
+    "mclaren-f1-blue-black-metallic-1-64-scale-model-car-mini-gt": {
+        "title": "McLaren F1 Blue Black Metallic 1:64 scale model car - Mini GT",
+        "handle": "mclaren-f1-blue-black-metallic-1-64-scale-model-car-mini-gt",
+        "price": "Rs. 1,199.00",
+        "image": "https://kollectibles.in/cdn/shop/files/MGT01303-front.jpg?v=1795177446&width=533"
+    },
     "honda-nsx-tamiya-x-kaido-house-avante-v1-1-64-scale-model-car-kaido-house-x-mini-gt": {
         "title": "Honda NSX Tamiya x Kaido House Avante V1 1:64 scale model car - Kaido House x Mini GT",
         "handle": "honda-nsx-tamiya-x-kaido-house-avante-v1-1-64-scale-model-car-kaido-house-x-mini-gt",
@@ -34,29 +58,5 @@
         "handle": "lamborghini-huracan-sterrato-woodland-green-camo-1-64-scale-model-car-mini-gt",
         "price": "Rs. 1,599.00",
         "image": "https://kollectibles.in/cdn/shop/files/mini-gt-lamborghini-huracan-sterrato-all-terrain-set-green-camo-front_7ebc0fb4-7e7e-4b50-a8d3-d935bb7128b0.jpg?v=1793807398&width=533"
-    },
-    "lamborghini-huracan-sterrato-desert-tan-camo-1-64-scale-model-car-mini-gt": {
-        "title": "Lamborghini Hurac\u00e1n Sterrato Desert Tan Camo 1:64 scale model car - Mini GT",
-        "handle": "lamborghini-huracan-sterrato-desert-tan-camo-1-64-scale-model-car-mini-gt",
-        "price": "Rs. 1,599.00",
-        "image": "https://kollectibles.in/cdn/shop/files/mini-gt-lamborghini-huracan-sterrato-all-terrain-set-desert-camo-front_e3030ff6-452f-46c6-9d6f-80ef8e9a5f5c.jpg?v=1793807397&width=533"
-    },
-    "lamborghini-huracan-sterrato-urban-grey-camo-1-64-scale-model-car-mini-gt": {
-        "title": "Lamborghini Hurac\u00e1n Sterrato Urban Grey Camo 1:64 scale model car - Mini GT",
-        "handle": "lamborghini-huracan-sterrato-urban-grey-camo-1-64-scale-model-car-mini-gt",
-        "price": "Rs. 1,599.00",
-        "image": "https://kollectibles.in/cdn/shop/files/mini-gt-lamborghini-huracan-sterrato-all-terrain-set-urban-camo-front_ecf85f8c-b4e7-423b-8bf9-15331b462e40.jpg?v=1793807396&width=533"
-    },
-    "bugatti-bolide-yellow-1-64-scale-model-car-mini-gt": {
-        "title": "Bugatti Bolide Yellow 1:64 scale model car - Mini GT",
-        "handle": "bugatti-bolide-yellow-1-64-scale-model-car-mini-gt",
-        "price": "Rs. 1,699.00",
-        "image": "https://kollectibles.in/cdn/shop/files/mini-gt-bugatti-bolide-yellow-front.jpg?v=1793036871&width=533"
-    },
-    "aston-martin-db5-fiesta-red-1-64-scale-model-car-mini-gt": {
-        "title": "Aston Martin DB5 Fiesta Red 1:64 scale model car - Mini GT",
-        "handle": "aston-martin-db5-fiesta-red-1-64-scale-model-car-mini-gt",
-        "price": "Rs. 1,249.00",
-        "image": "https://kollectibles.in/cdn/shop/files/mini-gt-aston-martin-db5-fiesta-red-box.jpg?v=1793036869&width=533"
     }
 }
